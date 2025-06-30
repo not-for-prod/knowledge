@@ -27,3 +27,26 @@ hmux.Use(
     ),  
 )
 ```
+Default(YAML):
+```yaml
+CORS:
+  AllowedOrigins: [ "https://*", "http://*" ]
+  AllowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+  AllowedHeaders: [ "Accept", "Authorization", "Content-Type", "X-CSRF-Token" ]
+  ExposedHeaders: [ "Link" ]
+  AllowCredentials: false
+  MaxAge: 30
+```
+Default(JSON):
+```json
+{
+  "CORS": {
+    "AllowedOrigins": ["https://*", "http://*"],
+    "AllowedMethods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "AllowedHeaders": ["Accept", "Authorization", "Content-Type", "X-CSRF-Token"],
+    "ExposedHeaders": ["Link"],
+    "AllowCredentials": false,
+    "MaxAge": 30
+  }
+}
+```
