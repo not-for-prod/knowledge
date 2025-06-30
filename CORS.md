@@ -1,4 +1,8 @@
 ```go
+import (
+    "github.com/go-chi/cors"
+)
+
 type CORS struct {  
     AllowedOrigins   []string  
     AllowedMethods   []string  
