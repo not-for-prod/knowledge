@@ -68,3 +68,13 @@ func TestTestSuite(t *testing.T) {
 	suite.Run(t, new(TestSuite))
 }
 ```
+Implementation:
+```go
+package ${GO_PACKAGE_NAME}
+
+type Implementation struct {}
+
+func New() *Implementation {
+	return &Implementation{}
+}
+```
