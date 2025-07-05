@@ -46,9 +46,9 @@ db:
 
 `Edit Variables...`
 
-Name | Expression 
-- | -
-FIELD_NAME | snakeCase(fieldName())
+| Name | Expression |
+| - | - |
+| FIELD_NAME | snakeCase(fieldName()) |
 
 ### Go:
 
