@@ -1,3 +1,7 @@
+# Unnest
+
+> batch unnest queries i always forget how to write
+
 insert:
 ```sql
 insert into balance (account_id, client_id, currency, active, frozen, income, expense)

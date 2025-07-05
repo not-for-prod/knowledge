@@ -1,4 +1,6 @@
-github.com/avito-tech/go-transaction-manager
+# Application layer transactions
+
+https://github.com/avito-tech/go-transaction-manager
 
 ## Usage
 

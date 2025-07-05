@@ -1,4 +1,6 @@
-how to get request ip
+# IP
+
+> how to get request ip
 ```go
 import (
 	"github.com/go-chi/chi/middleware"
