@@ -1,5 +1,11 @@
 # Buf Schema Registry
 
+## Prerequisites
+
+Install: https://buf.build/docs/cli/installation/
+
+## Usage
+
 `buf.yaml`
 
 ```yaml
@@ -35,11 +41,11 @@ managed:
       value: <go mod module + path for pb>
 plugins:
   - remote: buf.build/protocolbuffers/go
-    out: pkg/pb
+    out: internal/pkg/pb
     opt:
       - paths=source_relative
   - remote: buf.build/grpc/go
-    out: pkg/pb
+    out: internal/pkg/pb
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
@@ -48,14 +54,14 @@ plugins:
       - generate_unbound_methods=false
       - logtostderr=true
       - paths=source_relative
-    out: pkg/pb
+    out: internal/pkg/pb
   - remote: buf.build/grpc-ecosystem/openapiv2
-    out: pkg/pb
+    out: internal/pkg/pb
     opt:
       - generate_unbound_methods=false
       - fqn_for_openapi_name=true
   - local: protoc-gen-goclay
-    out: pkg/pb
+    out: internal/pkg/pb
     opt:
       - paths=source_relative
 ```

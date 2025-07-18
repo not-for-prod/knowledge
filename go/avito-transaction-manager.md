@@ -2,12 +2,18 @@
 
 https://github.com/avito-tech/go-transaction-manager
 
+## Dependencies
+
+```go
+"github.com/avito-tech/go-transaction-manager"
+```
+
 ## Usage
 
 repository layer (sqlx):
 ```go
 import (
-	trmsqlx "github.com/avito-tech/go-transaction-manager/sqlx"
+	trmsqlx "/sqlx"
 )
 
 _, err = i.ctxGetter.DefaultTrOrDB(ctx, i.db).ExecContext()
