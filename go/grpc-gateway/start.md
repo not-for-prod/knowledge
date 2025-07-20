@@ -1,8 +1,8 @@
 # gRPC-Gateway
 
-Install Buf CLI [Follow the instruction](../../proto/buf.md)
+> To Install Buf CLI [Follow the instruction](../../proto/buf.md)
 
-# Dependencies
+## Dependencies
 
 ```go
 "github.com/go-chi/chi/v5"
@@ -46,8 +46,7 @@ func TestGRPCGateway(t *testing.T) {
 	httpListener, err := net.Listen("tcp", net.JoinHostPort("", "8080"))
 	require.NoError(t, err)
 
-	// initiate gRPC-gateway server mux and register HTTP call handlers
-	httpServer := runtime.NewServeMux()
+	// initiate gRPC-gateway server mux and register HTTP call handlers)
 	err = desc.RegisterSummatorHandlerServer(context.Background(), runtimeMux, summatorService)
 	require.NoError(t, err)
 
