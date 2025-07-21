@@ -211,3 +211,48 @@ deploy_project:
     - kubectl get nodes -o wide
     - kubectl apply -f $CI_PROJECT_DIR/.deploy
 ```
+
+if you need to handle incoming HTTP/HTTPS requests you need `ingress.yaml`
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: ingress1.example.com
+      http:
+        paths:
+          - path: /svc
+            pathType: Prefix
+            backend:
+              service:
+                name: <service-name>
+                port:
+                  number: 80
+```
+
+and `loadbalancer.yaml`
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+    - name: https
+      port: 443
+      targetPort: 443
+  type: LoadBalancer
+```
